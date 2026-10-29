@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <style>
-.text-regular {
+.text {
   font-family: "Play", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -19,19 +19,26 @@
 }
 .text {
   color: white;
-  text-shadow: blue;
+  text-shadow: 1px 1px black;
 }
+      .square {
+        translate: 1300px 125px;  
+        background-color: green;
+          width: 50px;
+          height: 50px;
+          outline: solid black 2px;
+          cursor: pointer;
+        }
 </style>
   </head>
 <body>
   <h1 class="text">Introduction</h1>
-  <p class="text">so here i might put some games or something<p>
-  <h2>Pages</h2>
-    <ul>
+  <p class="text">so here i might put some games or something</p>
+  <h2 class="text">Pages</h2>
+  <!-- square -->
+        <div class="square" onclick="window.open('https://google.com', '_blank')"></div>
+    <ul class="text">
       <li>
-        <a herf="index2.html">
-          <button type="button">Page1</button>
-        </a>
+        <p>banana</p>
       </li>
-        <a>
 </body>
