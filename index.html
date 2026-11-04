@@ -14,12 +14,14 @@
 }
 
   body {
+  margin: 0;
   min-height: 100vh;
   background: linear-gradient(180deg, black 0%, #660000 100%);
 }
+/*idk if black text shadow does anything :P*/
 .text {
   color: white;
-  text-shadow: 1px 1px black;
+  text-shadow: 1px 1px white;
 }
       .square {
         translate: 1300px 125px;  
@@ -27,8 +29,13 @@
           width: 50px;
           height: 50px;
           outline: solid black 2px;
+        transition: transform 0.5s ease;
           cursor: pointer;
       }
+.square:hover {
+  transform: translateY(-1px);
+  background-color: blue;
+}
 </style>
   </head>
 <body>
