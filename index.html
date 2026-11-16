@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The real testsite</title>
+    <title>the test site</title>
   <style>
     body {
       margin: 0;
@@ -30,8 +30,8 @@
       <!--the buttons-->
       <button onclick="ShowPage1();">Home</button>
       <button onclick="ShowPage2();">Games??</button>
-      <button onclick="ShowPage3();">Credits</button>
-      <button onclick="ShowPage4();">About</button>
+      <button onclick="ShowPage3();">About</button>
+      <button onclick="ShowPage4();">Credits</button>
       <!--page 1-->
     <h1 class="text1">Welcome to the test site</h1>
     <!--page 2-->
@@ -39,17 +39,16 @@
     <h1>GAMZ<h1>
       <h4>(not ai)</h4>
       </div>
-      <!--page 4-->
-      <div class="text4">
-      <h1>Credits</h1>
-      <p>Creepdud000: made the site</p>
-      </div>
       <!--page 3-->
       <div class="text3">
         <h1>About</h1>
         <p>ill add stuff here later</p>
         </div>
-
+       <!--page 4-->
+      <div class="text4">
+      <h1>Credits</h1>
+      <p>Creepdud000: made the site</p>
+      </div>
       <script>
         const text1 = document.querySelector(".text1")
         const text2 = document.querySelector(".text2")
@@ -67,17 +66,17 @@
           text3.style.display = "none";
           text4.style.display = "none";
         }
-        function ShowPage3() {
-          text1.style.display = "none";
-          text2.style.display = "none";
-          text3.style.display = "none";
-          text4.style.display = "block";
-        }
-         function ShowPage4() {
+         function ShowPage3() {
           text1.style.display = "none";
           text2.style.display = "none";
           text3.style.display = "block";
           text4.style.display = "none";
+        }
+         function ShowPage4() {
+          text1.style.display = "none";
+          text2.style.display = "none";
+          text3.style.display = "none";
+          text4.style.display = "block";
         }
         </script>
         </body>
