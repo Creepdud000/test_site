@@ -1,53 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <meta charset="utf-8">
   <head>
-    <title>a test site</title>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-.text {
-  font-family: "Play", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+    <title>The real testsite</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+     background: linear-gradient(180deg, black 0%, #023E8A 150%);
+    }
+    .text1 {
+      color: white;
+      display: block;
+    }
+    .text2 {
+      color: white;
+      display: none;
+    }
+    .text3 {
+      color: white;
+      display: none;
+    }
+    .text4 {
+      color: white;
+      display: none;
+    }
+    </style>
+    </head>
+    <body>
+      <!--the buttons-->
+      <button onclick="ShowPage1();">Home</button>
+      <button onclick="ShowPage2();">Games??</button>
+      <button onclick="ShowPage3();">Credits</button>
+      <button onclick="ShowPage4();">About</button>
+      <!--page 1-->
+    <h1 class="text1">Welcome to the test site</h1>
+    <!--page 2-->
+    <div class="text2">
+    <h1>GAMZ<h1>
+      <h4>(not ai)</h4>
+      </div>
+      <!--page 4-->
+      <div class="text4">
+      <h1>Credits</h1>
+      <p>Creepdud000: made the site</p>
+      </div>
+      <!--page 3-->
+      <div class="text3">
+        <h1>About</h1>
+        <p>ill add stuff here later</p>
+        </div>
 
-  body {
-  margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(180deg, black 0%, #660000 100%);
-}
-/*idk if black text shadow does anything :P*/
-.text {
-  color: white;
-  text-shadow: 1px 1px black;
-}
-      .square {
-        translate: 1300px 125px;  
-        background-color: green;
-          width: 50px;
-          height: 50px;
-          outline: solid black 2px;
-        transition: transform 0.5s ease;
-          cursor: pointer;
-      }
-.square:hover {
-  transform: translateY(-1px);
-  background-color: blue;
-}
-</style>
-  </head>
-<body>
-  <h1 class="text">Introduction</h1>
-  <p class="text">so here i might put some games or something</p>
-  <h2 class="text">Pages</h2>
-  <!-- square -->
-        <div class="square" onclick="window.location.herf = 'index2.html'"></div>
-    <ul class="text">
-      <li>
-        <p>banana</p>
-      </li>
-    </ul>
-</body>
-</html>
+      <script>
+        const text1 = document.querySelector(".text1")
+        const text2 = document.querySelector(".text2")
+        const text3 = document.querySelector(".text3")
+        const text4 = document.querySelector(".text4")
+        function ShowPage1 () {
+          text1.style.display = "block";
+          text2.style.display = "none";
+          text3.style.display = "none";
+          text4.style.display = "none";
+        }
+        function ShowPage2() {
+          text1.style.display = "none";
+          text2.style.display = "block";
+          text3.style.display = "none";
+          text4.style.display = "none";
+        }
+        function ShowPage3() {
+          text1.style.display = "none";
+          text2.style.display = "none";
+          text3.style.display = "none";
+          text4.style.display = "block";
+        }
+         function ShowPage4() {
+          text1.style.display = "none";
+          text2.style.display = "none";
+          text3.style.display = "block";
+          text4.style.display = "none";
+        }
+        </script>
+        </body>
+        </html>
