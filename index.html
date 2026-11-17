@@ -27,21 +27,32 @@
     .text5 {
       display: none;
     }
-    button:hover {
+    .button button:hover {
       cursor: pointer;
+      background-color: #0077B6;
     }
     #html {
       border-radius: 10px;
+      resize: none;
+    }
+    .button button {
+     padding: 5px 5px;
+     border-radius: 10px;
+     border: black solid 1px;
+     background-color: #90E0EF;
+     transition: background-color ease 0.3s 
     }
     </style>
     </head>
     <body>
+      <div class="button">
       <!--the buttons-->
-      <button onclick="ShowPage1();">Home</button>
-      <button onclick="ShowPage2();">Games??</button>
-      <button onclick="ShowPage3();">About</button>
-      <button onclick="ShowPage4();">Credits</button>
-      <button onclick="ShowPage5();">Emulator</button>
+      <button onclick="ShowPage(1);">Home</button>
+      <button onclick="ShowPage(2);">Games??</button>
+      <button onclick="ShowPage(3);">About</button>
+      <button onclick="ShowPage(4);">Credits</button>
+      <button onclick="ShowPage(5);">Emulator</button>
+      </div>
       <!--page 1-->
     <h1 class="text1">Welcome to the test site</h1>
     <!--page 2-->
@@ -63,49 +74,25 @@
       <div class="text5">
         <h1>Html Emulator</h1>
         <h2><i>Work in progress</i></h2>
-        <textarea id="html" rows="20" cols="80" placeholder="Put HTML here..."></textarea> <button onclick="Emulator();">run</button>
-      </div>
+        <textarea id="html" rows="20" cols="80" placeholder="Put HTML here..."></textarea> <button onclick="Emulator();" id="run">run</button>
+       </div>
+       <!--THE JS YEAAAAH-->
       <script>
         const text1 = document.querySelector(".text1")
         const text2 = document.querySelector(".text2")
         const text3 = document.querySelector(".text3")
         const text4 = document.querySelector(".text4")
         const text5 = document.querySelector(".text5")
-        function ShowPage1 () {
-          text1.style.display = "block";
-          text2.style.display = "none";
-          text3.style.display = "none";
-          text4.style.display = "none";
-          text5.style.display = "none";
-        }
-        function ShowPage2() {
-          text1.style.display = "none";
-          text2.style.display = "block";
-          text3.style.display = "none";
-          text4.style.display = "none";
-          text5.style.display = "none";
-        }
-         function ShowPage3() {
-          text1.style.display = "none";
-          text2.style.display = "none";
-          text3.style.display = "block";
-          text4.style.display = "none";
-          text5.style.display = "none";
-        }
-         function ShowPage4() {
-          text1.style.display = "none";
-          text2.style.display = "none";
-          text3.style.display = "none";
-          text4.style.display = "block";
-          text5.style.display = "none";
-        }
-        function ShowPage5() {
+        // pages
+        function ShowPage(page) {
           text1.style.display = "none";
           text2.style.display = "none";
           text3.style.display = "none";
           text4.style.display = "none";
-          text5.style.display = "block";
+          text5.style.display = "none";
+          document.querySelector(".text" + page).style.display = "block"
         }
+        //emulator
         function Emulator() {
            const html = document.getElementById("html").value
         const blob = new Blob([html], {type: "text/html"});
