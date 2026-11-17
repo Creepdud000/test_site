@@ -63,7 +63,7 @@
       <div class="text5">
         <h1>Html Emulator</h1>
         <h2><i>Work in progress</i></h2>
-        <textarea id="html" rows="20" cols="80" placeholder="Put HTML here..."></textarea>
+        <textarea id="html" rows="20" cols="80" placeholder="Put HTML here..."></textarea> <button onclick="Emulator();">run</button>
       </div>
       <script>
         const text1 = document.querySelector(".text1")
@@ -71,7 +71,6 @@
         const text3 = document.querySelector(".text3")
         const text4 = document.querySelector(".text4")
         const text5 = document.querySelector(".text5")
-        const html = document.getElementById("html").value
         function ShowPage1 () {
           text1.style.display = "block";
           text2.style.display = "none";
@@ -106,6 +105,12 @@
           text3.style.display = "none";
           text4.style.display = "none";
           text5.style.display = "block";
+        }
+        function Emulator() {
+           const html = document.getElementById("html").value
+        const blob = new Blob([html], {type: "text/html"});
+        const url = URL.createObjectURL(blob);
+        window.open(url, "_blank");
         }
         </script>
         </body>
