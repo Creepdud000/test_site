@@ -3,11 +3,18 @@
   <head>
     <title>the test site</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+    * {
+  font-family: "Electrolize", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
     body {
       margin: 0;
       min-height: 100vh;
      background: linear-gradient(180deg, black 0%, #023E8A 150%);
     }
+    /* pages */ 
     .text1 {
       color: white;
       display: block;
@@ -27,6 +34,10 @@
     .text5 {
       display: none;
     }
+    .text6 {
+      display: none;
+    }
+    /*buttons*/
     .button button:hover {
       cursor: pointer;
       background-color: #0077B6;
@@ -42,6 +53,7 @@
       background-color: #48CAE4;
       transform: translateY(-1px)
     }
+    /* text box & button - html emulator */
     #html {
       color: black;
       background-color: #90E0EF;
@@ -56,6 +68,9 @@
      background-color: #90E0EF;
      transition: background-color ease 0.3s 
     }
+    #passwordTest {
+      display: none;
+    }
     </style>
     </head>
     <body>
@@ -68,17 +83,20 @@
       <button onclick="ShowPage(5);">Emulator</button>
       </div>
       <!--page 1-->
-    <h1 class="text1">Welcome to the test site</h1>
+      <div class="text1">
+    <h1>Welcome to the test site</h1>
+    <input id="passwordTest"></input>
+     </div>
     <!--page 2-->
     <div class="text2">
     <h1>GAMZ<h1>
-      <h4>(not ai)</h4>
+      <h4>work in progress</h4>
       </div>
       <!--page 3-->
       <div class="text3">
         <h1>About</h1>
         <p>
-          If you are at <i>all</i> familiar with Ultra Game Stash, you might know about their site, which is <b>COMPLETELY VIBE CODDED</b>. That's not the main problem I have with it though, the problem I have with it is that in the "about" you could say, it says and I quote, "some sites are real and some are AI" the thing is is that like 90% of the games are AI generated. Out of 20 to 30 games, <b>3</b> are real. So that's why i made this site, to make a better <b>HUMAN MADE</b> site.
+         not yet
         </p>
         </div>
        <!--page 4-->
@@ -91,6 +109,8 @@
         <h1>Html Emulator</h1>
         <textarea id="html" rows="20" cols="80" placeholder="Put HTML here..."></textarea> <br> <button onclick="Emulator();" id="run">run</button>
        </div>
+       <!--page 6????-->
+       <div class="text6">
        <!--THE JS YEAAAAH-->
       <script>
         const text1 = document.querySelector(".text1")
@@ -98,6 +118,8 @@
         const text3 = document.querySelector(".text3")
         const text4 = document.querySelector(".text4")
         const text5 = document.querySelector(".text5")
+        const text6 = document.querySelector(".text6")
+        const password = document.getElementById("passwordTest")
         // pages
         function ShowPage(page) {
           text1.style.display = "none";
@@ -105,6 +127,7 @@
           text3.style.display = "none";
           text4.style.display = "none";
           text5.style.display = "none";
+          text6.style.display = "none";
           document.querySelector(".text" + page).style.display = "block"
         }
         //emulator
@@ -114,6 +137,15 @@
         const url = URL.createObjectURL(blob);
         window.open(url, "_blank");
         }
+        document.addEventListener("keydown", function(event) {
+          if (event.key === "`") {
+            if (password.style.display === "none") {
+              password.style.display = "block";
+            } else {
+            password.style.display = "none";
+          }
+          }
+        });
         </script>
         </body>
         </html>
