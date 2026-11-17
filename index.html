@@ -31,8 +31,22 @@
       cursor: pointer;
       background-color: #0077B6;
     }
-    #html {
+    #run {
+      background-color: #0096C7;
       border-radius: 10px;
+      border: black solid 2px;
+      transition: ease 0.2s;
+    }
+    #run:hover {
+      cursor: pointer;
+      background-color: #48CAE4;
+      transform: translateY(-1px)
+    }
+    #html {
+      color: black;
+      background-color: #90E0EF;
+      border-radius: 10px;
+      border: solid white 2px;
       resize: none;
     }
     .button button {
@@ -63,18 +77,19 @@
       <!--page 3-->
       <div class="text3">
         <h1>About</h1>
-        <p>ill add stuff here later</p>
+        <p>
+          If you are at <i>all</i> familiar with Ultra Game Stash, you might know about their site, which is <b>COMPLETELY VIBE CODDED</b>. That's not the main problem I have with it though, the problem I have with it is that in the "about" you could say, it says and I quote, "some sites are real and some are AI" the thing is is that like 90% of the games are AI generated. Out of 20 to 30 games, <b>3</b> are real. So that's why i made this site, to make a better <b>HUMAN MADE</b> site.
+        </p>
         </div>
        <!--page 4-->
       <div class="text4">
       <h1>Credits</h1>
-      <p>Creepdud000: made the site</p>
+      <p>Creepdud000 - made the site</p>
       </div>
       <!--page 5-->
       <div class="text5">
         <h1>Html Emulator</h1>
-        <h2><i>Work in progress</i></h2>
-        <textarea id="html" rows="20" cols="80" placeholder="Put HTML here..."></textarea> <button onclick="Emulator();" id="run">run</button>
+        <textarea id="html" rows="20" cols="80" placeholder="Put HTML here..."></textarea> <br> <button onclick="Emulator();" id="run">run</button>
        </div>
        <!--THE JS YEAAAAH-->
       <script>
