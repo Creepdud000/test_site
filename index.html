@@ -41,6 +41,11 @@
     .button button:hover {
       cursor: pointer;
       background-color: #0077B6;
+      color: white;
+    }
+    /*secret btn */
+    #wut {
+      display: none;
     }
     #run {
       background-color: #0096C7;
@@ -53,6 +58,9 @@
       background-color: #48CAE4;
       transform: translateY(-1px)
     }
+    #html:focus {
+      outline: none;
+    }
     /* text box & button - html emulator */
     #html {
       color: black;
@@ -60,6 +68,9 @@
       border-radius: 10px;
       border: solid white 2px;
       resize: none;
+    }
+    #html::placeholder {
+      color: black;
     }
     .button button {
      padding: 5px 5px;
@@ -69,7 +80,12 @@
      transition: background-color ease 0.3s 
     }
     #passwordTest {
+      padding: 5px 5px;
+      border-radius: 15px;
       display: none;
+    }
+    #passwordTest::placeholder {
+      color: lightblack;
     }
     </style>
     </head>
@@ -81,11 +97,15 @@
       <button onclick="ShowPage(3);">About</button>
       <button onclick="ShowPage(4);">Credits</button>
       <button onclick="ShowPage(5);">Emulator</button>
+      <button id="wut" onclick="ShowPage(6)">???</button>
       </div>
+      <!--background color switcher-->
+      <div class="BCS"><div>
       <!--page 1-->
       <div class="text1">
     <h1>Welcome to the test site</h1>
-    <input id="passwordTest"></input>
+    <h3>click the buttons to visit other pages</h3>
+    <input id="passwordTest" placeholder="Password...?"></input>
      </div>
     <!--page 2-->
     <div class="text2">
@@ -111,6 +131,8 @@
        </div>
        <!--page 6????-->
        <div class="text6">
+       <h1>Ill add something intresting here</h1>
+       <h4>maybe</h4>
        <!--THE JS YEAAAAH-->
       <script>
         const text1 = document.querySelector(".text1")
@@ -120,6 +142,7 @@
         const text5 = document.querySelector(".text5")
         const text6 = document.querySelector(".text6")
         const password = document.getElementById("passwordTest")
+        const wut = document.getElementById("wut")
         // pages
         function ShowPage(page) {
           text1.style.display = "none";
@@ -144,6 +167,14 @@
             } else {
             password.style.display = "none";
           }
+          }
+          if (event.key === "Enter") {
+            if (password.value === "OpenSesame") {
+              wut.style.display = "inline-block"
+              password.value = ""
+            } else {
+            wut.style.display = "none"
+            }
           }
         });
         </script>
