@@ -14,7 +14,9 @@
       min-height: 100vh;
      background: linear-gradient(180deg, black 0%, #023E8A 150%);
     }
-    /* pages */ 
+
+    /* pages */
+
     .text1 {
       color: white;
       display: block;
@@ -37,13 +39,20 @@
     .text6 {
       display: none;
     }
+    .text7 {
+      display: none;
+    }
+
     /*buttons*/
+
     .button button:hover {
       cursor: pointer;
       background-color: #0077B6;
       color: white;
     }
+
     /*secret btn */
+
     #wut {
       display: none;
     }
@@ -61,7 +70,9 @@
     #html:focus {
       outline: none;
     }
+
     /* text box & button - html emulator */
+
     #html {
       color: black;
       background-color: #90E0EF;
@@ -72,6 +83,9 @@
     #html::placeholder {
       color: black;
     }
+
+   /*other button things*/
+
     .button button {
      padding: 5px 5px;
      border-radius: 10px;
@@ -79,71 +93,130 @@
      background-color: #90E0EF;
      transition: background-color ease 0.3s 
     }
+  /*password things*/
+
     #passwordTest {
       padding: 5px 5px;
       border-radius: 15px;
+      border: solid black 2px;
       display: none;
     }
     #passwordTest::placeholder {
       color: lightblack;
     }
+
+    /* settings */
+
+    #settings {
+    text-align: center;
+    }
+    #checkbox {
+    appearance: none;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border: white solid 2px;
+    border-radius: 50%;
+    margin: 0;
+    gap-space: 5px;
+    }
+    #checkbox:checked {
+    background-color: red;
+    border: solid white 2px;
+    }
+
     </style>
     </head>
     <body>
-      <div class="button">
+
       <!--the buttons-->
+
+      <div class="btn_panel">
+       <div class="button">
       <button onclick="ShowPage(1);">Home</button>
       <button onclick="ShowPage(2);">Games??</button>
       <button onclick="ShowPage(3);">About</button>
       <button onclick="ShowPage(4);">Credits</button>
       <button onclick="ShowPage(5);">Emulator</button>
+      <button onclick="ShowPage(7);">Settings</button>
       <button id="wut" onclick="ShowPage(6)">???</button>
       </div>
-      <!--background color switcher-->
-      <div class="BCS"><div>
-      <!--page 1-->
+
+      <!--page 1: home -->
+
       <div class="text1">
     <h1>Welcome to the test site</h1>
     <h3>click the buttons to visit other pages</h3>
-    <input id="passwordTest" placeholder="Password...?"></input>
+    <input id="passwordTest" type="password" placeholder="Password...?"></input>
      </div>
-    <!--page 2-->
+
+    <!--page 2: Games??-->
+
     <div class="text2">
     <h1>GAMZ<h1>
       <h4>work in progress</h4>
       </div>
-      <!--page 3-->
+
+      <!--page 3: About-->
+
       <div class="text3">
         <h1>About</h1>
         <p>
          not yet
         </p>
         </div>
-       <!--page 4-->
+
+       <!--page 4: Credits-->
+
       <div class="text4">
       <h1>Credits</h1>
       <p>Creepdud000 - made the site</p>
       </div>
-      <!--page 5-->
+
+      <!--page 5: Emulator-->
+
       <div class="text5">
         <h1>Html Emulator</h1>
-        <textarea id="html" rows="20" cols="80" placeholder="Put HTML here..."></textarea> <br> <button onclick="Emulator();" id="run">run</button>
+        <textarea id="html" rows="20" cols="80" placeholder="Put HTML here..."></textarea> 
+        <br> 
+        <button onclick="Emulator();" id="run">run</button>
        </div>
-       <!--page 6????-->
+
+       <!--page 6???-->
+
        <div class="text6">
-       <h1>Ill add something intresting here</h1>
-       <h4>maybe</h4>
+       <h1>Stratagies</h1>
+       <h4>here is a list of strats i use</h4>
+       </div>
+
+       <!--page 7: Settings-->
+
+       <div class="text7">
+        <h1 id="settings">Settings</h1>
+        <h4 id="settings">(work in progress)</h4>
+        <br>
+        <h2 id="settings">Themes</h2>
+        <br>
+        <input type="checkbox" id="checkbox">Deep Red Theme</input>
+
        <!--THE JS YEAAAAH-->
+
       <script>
+
+       // defining
+
         const text1 = document.querySelector(".text1")
         const text2 = document.querySelector(".text2")
         const text3 = document.querySelector(".text3")
         const text4 = document.querySelector(".text4")
         const text5 = document.querySelector(".text5")
         const text6 = document.querySelector(".text6")
+        const text7 = document.querySelector(".text7")
         const password = document.getElementById("passwordTest")
         const wut = document.getElementById("wut")
+
         // pages
+
         function ShowPage(page) {
           text1.style.display = "none";
           text2.style.display = "none";
@@ -151,9 +224,12 @@
           text4.style.display = "none";
           text5.style.display = "none";
           text6.style.display = "none";
+          text7.style.display = "none";
           document.querySelector(".text" + page).style.display = "block"
         }
+
         //emulator
+
         function Emulator() {
            const html = document.getElementById("html").value
         const blob = new Blob([html], {type: "text/html"});
@@ -174,6 +250,7 @@
               password.value = ""
             } else {
             wut.style.display = "none"
+            password.value = ""
             }
           }
         });
