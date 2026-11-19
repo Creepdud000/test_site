@@ -12,7 +12,7 @@
     body {
       margin: 0;
       min-height: 100vh;
-     background: linear-gradient(180deg, black 0%, #023E8A 150%);
+     background: linear-gradient(180deg, black 0%, #023E8A 100%);
     }
 
     /* pages */
@@ -58,7 +58,7 @@
     }
     #run {
       background-color: #0096C7;
-      border-radius: 10px;
+      border-radius: 15px;
       border: black solid 2px;
       transition: ease 0.2s;
     }
@@ -68,7 +68,7 @@
       transform: translateY(-1px)
     }
     #html:focus {
-      outline: none;
+      outline: #ADE8F4;
     }
 
     /* text box & button - html emulator */
@@ -87,12 +87,16 @@
    /*other button things*/
 
     .button button {
+     display: inline-block;
+     flex-wrap: nowrap;
      padding: 5px 5px;
      border-radius: 10px;
      border: black solid 1px;
      background-color: #90E0EF;
+     gap: 10px;
      transition: background-color ease 0.3s 
     }
+
   /*password things*/
 
     #passwordTest {
@@ -119,10 +123,34 @@
     border-radius: 50%;
     margin: 0;
     gap-space: 5px;
+    transform: translateY(1px)
     }
     #checkbox:checked {
     background-color: red;
     border: solid white 2px;
+    }
+
+    /*btn panel*/
+
+    /*2nd number is 480 when not in testing */
+
+    /*when testing its 153 */
+
+    .button {
+      display: flex;
+      gap: 10px;
+      flex-wrap: nowrap;
+      text-wrap: nowrap;
+      background-color: rgba(3,4,94,0.3);
+      border: solid #0077B6 2px;
+      border-radius: 15px;
+      padding: 10px 480px;
+      transition: background-color ease 0.5s;
+      transition: border 0.3s ease;
+    }
+    .button:hover {
+      border: solid #48CAE4 2px;
+      background-color: rgba(2,62,138,0.3);
     }
 
     </style>
@@ -131,11 +159,10 @@
 
       <!--the buttons-->
 
-      <div class="btn_panel">
        <div class="button">
       <button onclick="ShowPage(1);">Home</button>
       <button onclick="ShowPage(2);">Games??</button>
-      <button onclick="ShowPage(3);">About</button>
+      <button onclick="ShowPage(3);">Ai games ig</button>
       <button onclick="ShowPage(4);">Credits</button>
       <button onclick="ShowPage(5);">Emulator</button>
       <button onclick="ShowPage(7);">Settings</button>
@@ -147,7 +174,7 @@
       <div class="text1">
     <h1>Welcome to the test site</h1>
     <h3>click the buttons to visit other pages</h3>
-    <input id="passwordTest" type="password" placeholder="Password...?"></input>
+    <input id="passwordTest" placeholder="Password...?"></input>
      </div>
 
     <!--page 2: Games??-->
@@ -157,12 +184,12 @@
       <h4>work in progress</h4>
       </div>
 
-      <!--page 3: About-->
+      <!--page 3: Ai games ig-->
 
       <div class="text3">
-        <h1>About</h1>
+        <h1>games i stole from ultra</h1>
         <p>
-         not yet
+         nothing yet
         </p>
         </div>
 
@@ -197,7 +224,9 @@
         <br>
         <h2 id="settings">Themes</h2>
         <br>
-        <input type="checkbox" id="checkbox">Deep Red Theme</input>
+        <input type="checkbox" id="checkbox"></input>
+        <label>Deep Red Theme</label>
+       </div>
 
        <!--THE JS YEAAAAH-->
 
